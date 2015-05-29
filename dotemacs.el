@@ -1,5 +1,5 @@
 ;; Define my custom elisp location, and load the common init.
-(defvar personal-project-path "~/repos/personal_work/emacs")
+(defvar personal-project-path "~/repos/glens_elisp")
 (add-to-list 'load-path  personal-project-path )
 (load "common-init.el")
 (load "devel-stuff.el")
