@@ -1,4 +1,11 @@
 ;; Define my custom elisp location, and load the common init.
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (defvar personal-project-path "~/repos/glens_elisp")
 (add-to-list 'load-path  personal-project-path )
 (load "common-init.el")
