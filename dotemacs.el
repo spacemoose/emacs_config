@@ -8,6 +8,15 @@
 (load "refactoring.el")
 (load "xentis.el")
 
+(require 'semantic)
+(require 'semantic/bovine/gcc)
+(add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
+;(add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
+(semantic-mode 1)
+(global-ede-mode t)
+(ede-enable-generic-projects)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
