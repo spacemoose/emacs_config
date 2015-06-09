@@ -40,6 +40,7 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "ACTIVE(a)" "|" "DONE(d!)" )
 		(sequence "IMPLEMENT" "TEST" "REVIEW" "|" "PUSHED")
+		(sequence "INVESTIGATE" "PROPOSE" "IMPLEMENT" "|" "TASKED" "DONE")
 		))
 
 
