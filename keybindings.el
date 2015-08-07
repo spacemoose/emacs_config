@@ -5,6 +5,13 @@
 (global-set-key [\M-down] 'end-of-defun)
 
 
+;(global-set-key (kbd "M-j") 'semantic-ia-fast-jump)
+
+(global-set-key (kbd "M-n") 'flycheck-next-error)
+(global-set-key (kbd "M-p") 'flycheck-previous-error)
+
+
+
 ;;-------------------
 ;; whack whitespace
 (defun ww (arg)
