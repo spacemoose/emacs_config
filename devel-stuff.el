@@ -15,7 +15,7 @@
 
 ;;-------------------------------------------------------
 ;;        HIDESHOW
-(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
+;(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
 
 
 ;; @todo need to get this working again, but using helmf

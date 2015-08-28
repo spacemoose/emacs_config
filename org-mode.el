@@ -82,8 +82,11 @@
    (C . t)
    ))
 
-;; ;; Include the latex-exporter
-;; ;;(require 'ox-latex)
+;; Include the latex-exporter
+;(require 'ox-latex)
+
+;; fontify code in code blocks
+;;(setq org-src-fontify-natively nil)
 
 ;; ;; Add minted to the defaults packages to include when exporting.
 ;; (add-to-list 'org-latex-packages-alist '("" "minted"))
