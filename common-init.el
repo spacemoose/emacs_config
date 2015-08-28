@@ -10,7 +10,7 @@
 ;; enable melpa packages.
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 ;; Re-enable some stuff that's disabled.
 (put 'downcase-region 'disabled nil)
 

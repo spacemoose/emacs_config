@@ -20,10 +20,18 @@
 (add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
-(add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
+;(add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
 (semantic-mode 1)
-(global-ede-mode t)
-(ede-enable-generic-projects)
+;(global-ede-mode t)
+;(ede-enable-generic-projects)
+
+
+(define-fringe-bitmap 'custom-hollow-right-arrow [128 192 96 48 24 48 96 192 128] 15 8 'center)
+
+(put 'overlay-arrow-position 'overlay-arrow-bitmap 'custom-hollow-right-arrow)
+
+(provide 'dotemacs)
+;;; dotemacs.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
