@@ -1,6 +1,6 @@
 (setq inhibit-splash-screen t)
 (setq vc-follow-symlinks t) ;; don't prompt me to follow symlinks
-;(load-theme 'tango)
+
 (show-paren-mode 1)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 
@@ -8,9 +8,7 @@
 (put 'upcase-region 'disabled nil)
 
 ;; enable melpa packages.
-(package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 ;; Re-enable some stuff that's disabled.
 (put 'downcase-region 'disabled nil)
 

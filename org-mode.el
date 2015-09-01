@@ -83,7 +83,7 @@
    ))
 
 ;; Include the latex-exporter
-;(require 'ox-latex)
+(require 'ox-latex)
 
 ;; fontify code in code blocks
 ;;(setq org-src-fontify-natively nil)
