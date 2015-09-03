@@ -41,7 +41,26 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-	("c3e6b52caa77cb09c049d3c973798bc64b5c43cc437d449eacf35b3e776bf85c" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "70f5a47eb08fe7a4ccb88e2550d377ce085fedce81cf30c56e3077f95a2909f2" "0155b3b94f6d5bce0275a15bc662be4f6f9f3284f9e469ca4ab1bd67ff9b5222" "acca0c2fbc4cb3b9f19d976c3547cbb99691b5fd402788589162b367f0814b08" default))))
+	("c3e6b52caa77cb09c049d3c973798bc64b5c43cc437d449eacf35b3e776bf85c" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "70f5a47eb08fe7a4ccb88e2550d377ce085fedce81cf30c56e3077f95a2909f2" "0155b3b94f6d5bce0275a15bc662be4f6f9f3284f9e469ca4ab1bd67ff9b5222" "acca0c2fbc4cb3b9f19d976c3547cbb99691b5fd402788589162b367f0814b08" default)))
+ '(org-latex-default-packages-alist
+   (quote
+	(("T1" "fontenc" t)
+	 ("" "fixltx2e" nil)
+	 ("" "graphicx" t)
+	 ("" "longtable" nil)
+	 ("" "float" nil)
+	 ("" "wrapfig" nil)
+	 ("" "rotating" nil)
+	 ("normalem" "ulem" t)
+	 ("" "amsmath" t)
+	 ("" "textcomp" t)
+	 ("" "marvosym" t)
+	 ("" "wasysym" t)
+	 ("" "amssymb" t)
+	 ("" "hyperref" nil)
+	 "\\tolerance=1000")))
+ '(org-latex-packages-alist (quote (("" "fontspec" nil) ("" "minted" t))))
+ '(org-src-preserve-indentation t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

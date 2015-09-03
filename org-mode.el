@@ -33,9 +33,6 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((gnuplot . t)))
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "ACTIVE(a)" "|" "DONE(d!)" )
@@ -82,19 +79,18 @@
    (C . t)
    ))
 
-;; ;; Include the latex-exporter
-;; ;;(require 'ox-latex)
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
 
-;; ;; Add minted to the defaults packages to include when exporting.
-;; (add-to-list 'org-latex-packages-alist '("" "minted"))
-;; ;; Tell the latex export to use the minted package for source
-;; ;; code coloration.
-;; (setq org-latex-listings 'minted)
-;; ;; Let the exporter use the -shell-escape option to let latex
-;; ;; execute external programs.
-;; ;; This obviously and can be dangerous to activate!
-;; (setq org-latex-pdf-process
-;;       '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+;; Tell the latex export to use the minted package for source
+;; code coloration.
+(setq org-latex-listings 'minted)
+
+;; Let the exporter use the -shell-escape option to let latex
+;; execute external programs.
+;; This obviously and can be dangerous to activate!
+(setq org-latex-pdf-process
+      '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 
 ;;; Where I keep my org files.
