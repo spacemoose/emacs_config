@@ -22,20 +22,17 @@
 ;;--------------------------------------------
 ;; org latex configuration:
 ;(require 'org-latex)
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
-(add-to-list 'org-export-latex-classes
-             '("article"
-               "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+;;(unless (boundp 'org-export-latex-classes)
+;;  (setq org-latex-classes nil))
+;; (add-to-list 'org-latex-classes
+;;              '("article"
+;;                "\\documentclass{article}"
+;;                ("\\section{%s}" . "\\section*{%s}")
+;;                ("\\subsection{%s}" . "\\subsection*{%s}")
+;;                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+;;                ("\\paragraph{%s}" . "\\paragraph*{%s}")
+;;                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((gnuplot . t)))
 
 (setq org-todo-keywords
       '((sequence "TODO(t)" "ACTIVE(a)" "|" "DONE(d!)" )
@@ -86,22 +83,27 @@
 (require 'ox-latex)
 
 ;; fontify code in code blocks
-;;(setq org-src-fontify-natively nil)
+(setq org-src-fontify-natively t)
 
-;; ;; Add minted to the defaults packages to include when exporting.
-;; (add-to-list 'org-latex-packages-alist '("" "minted"))
-;; ;; Tell the latex export to use the minted package for source
-;; ;; code coloration.
-;; (setq org-latex-listings 'minted)
-;; ;; Let the exporter use the -shell-escape option to let latex
-;; ;; execute external programs.
-;; ;; This obviously and can be dangerous to activate!
-;; (setq org-latex-pdf-process
-;;       '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+;; Add minted to the defaults packages to include when exporting.
+(add-to-list 'org-latex-packages-alist '("" "minted"))
 
+;;; XeLaTeX customisations
+;; remove "inputenc" from default packages as it clashes with xelatex
+(setf org-export-latex-default-packages-alist
+      (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+
+;; Tell the latex export to use the minted package for source
+;; code coloration.
+(setq org-latex-listings 'minted)
+
+;; Let the exporter use the -shell-escape option to let latex
+;; execute external programs.
+;; This obviously and can be dangerous to activate!
+(setq org-latex-pdf-process
+      '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 ;;; Where I keep my org files.
 (add-to-list 'org-agenda-files (expand-file-name "~/orgs"))
-
 
 (provide 'glen-org-stuff)
