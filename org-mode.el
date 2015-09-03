@@ -22,16 +22,16 @@
 ;;--------------------------------------------
 ;; org latex configuration:
 ;(require 'org-latex)
-;;(unless (boundp 'org-export-latex-classes)
-;;  (setq org-latex-classes nil))
-;; (add-to-list 'org-latex-classes
-;;              '("article"
-;;                "\\documentclass{article}"
-;;                ("\\section{%s}" . "\\section*{%s}")
-;;                ("\\subsection{%s}" . "\\subsection*{%s}")
-;;                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-;;                ("\\paragraph{%s}" . "\\paragraph*{%s}")
-;;                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 
 (setq org-todo-keywords
@@ -79,23 +79,9 @@
    (C . t)
    ))
 
-;; Include the latex-exporter
-(require 'ox-latex)
 
 ;; fontify code in code blocks
 (setq org-src-fontify-natively t)
-
-;; Add minted to the defaults packages to include when exporting.
-(add-to-list 'org-latex-packages-alist '("" "minted"))
-
-;;; XeLaTeX customisations
-;; remove "inputenc" from default packages as it clashes with xelatex
-(setf org-export-latex-default-packages-alist
-      (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
-
-;; Tell the latex export to use the minted package for source
-;; code coloration.
-(setq org-latex-listings 'minted)
 
 ;; Let the exporter use the -shell-escape option to let latex
 ;; execute external programs.
