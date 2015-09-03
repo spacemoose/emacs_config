@@ -4,7 +4,6 @@
 ;; 	  (lambda ()
 ;; 	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
 ;; 	      (ggtags-mode 1))))
-(setq compile-command "ssh pdxenlin66 \"build500\"")
 
 
 
@@ -15,7 +14,7 @@
 
 ;;-------------------------------------------------------
 ;;        HIDESHOW
-(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
+;(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
 
 
 ;; @todo need to get this working again, but using helmf

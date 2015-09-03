@@ -79,8 +79,6 @@
    (C . t)
    ))
 
-;; fontify code in code blocks
-(setq org-src-fontify-natively t)
 
 ;; Tell the latex export to use the minted package for source
 ;; code coloration.
