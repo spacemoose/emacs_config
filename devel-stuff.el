@@ -1,11 +1,3 @@
-;; ---
-;; building
-;; (add-hook 'c-mode-common-hook
-;; 	  (lambda ()
-;; 	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-;; 	      (ggtags-mode 1))))
-
-
 
 (add-hook 'c-mode-common-hook 'hs-minor-mode) ;hideshow enabled for all C/C++
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -14,7 +6,7 @@
 
 ;;-------------------------------------------------------
 ;;        HIDESHOW
-;(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
+(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
 
 
 ;; @todo need to get this working again, but using helmf

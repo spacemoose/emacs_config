@@ -18,7 +18,6 @@
 
 (add-hook 'c++-mode-hook 'my-indent-setup)
 
-
 ; All these should go in one c-mode common hook statement.
 (add-hook 'c-mode-common-hook 'subword-mode) ; camel case support
 (add-hook 'c-mode-common-hook
