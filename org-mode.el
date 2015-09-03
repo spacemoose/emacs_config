@@ -83,6 +83,9 @@
 ;; fontify code in code blocks
 (setq org-src-fontify-natively t)
 
+;; org-export should use minted:
+(setq org-latex-listings 'minted)
+
 ;; Let the exporter use the -shell-escape option to let latex
 ;; execute external programs.
 ;; This obviously and can be dangerous to activate!
