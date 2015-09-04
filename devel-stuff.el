@@ -3,6 +3,15 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook 'nlinum-mode)
 
+(set-face-attribute 'font-lock-function-name-face nil
+;					:weight 'bold
+					:height 1.25 )
+
+(setq flycheck-clang-language-standard "c++11")
+
+;; More visually obvious error message.
+(define-fringe-bitmap 'custom-hollow-right-arrow [128 192 96 48 24 48 96 192 128] 15 8 'center)
+(put 'overlay-arrow-position 'overlay-arrow-bitmap 'custom-hollow-right-arrow)
 
 ;;-------------------------------------------------------
 ;;        HIDESHOW
