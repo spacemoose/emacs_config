@@ -33,13 +33,37 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
-
 (setq org-todo-keywords
       '((sequence "TODO(t)" "ACTIVE(a)" "|" "DONE(d!)" )
 		(sequence "IMPLEMENT" "TEST" "REVIEW" "|" "PUSHED")
 		(sequence "INVESTIGATE" "PROPOSE" "IMPLEMENT" "|" "TASKED" "DONE")
 		))
 
+;;---------------------------
+;; Code snippets and unicode:
+;;---------------------------
+
+(delete "inputenc" org-latex-default-packages-alist)
+(delete "fontspec" org-latex-default-packages-alist)
+
+;; minted for highlighting, fontspec for unicode fonts
+(setq org-latex-packages-alist (quote (("" "minted" t) ("" "fontspec" nil))))
+
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
+
+;; latex-export to use the minted package for syntax highlighting
+(setq org-latex-listings 'minted)
+
+;; minted needs xelated to use -shell-escape.  Dangerous!
+(setq org-latex-pdf-process
+	  '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+;; I want my catptions below.
+(setq org-latex-table-caption-above nil)
+
+;; workaround for tabs.
+(setq org-src-preserve-indentation t)
 
 (defun org-summary-todo (n-done n-not-done)
   "Switch entry to DONE when all subentries are done, to TODO otherwise."
@@ -80,8 +104,10 @@
    ))
 
 
-;; Tell the latex export to use the minted package for source
-;; code coloration.
+;; fontify code in code blocks
+(setq org-src-fontify-natively t)
+
+;; org-export should use minted:
 (setq org-latex-listings 'minted)
 
 ;; Let the exporter use the -shell-escape option to let latex
@@ -90,9 +116,7 @@
 (setq org-latex-pdf-process
       '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
-
 ;;; Where I keep my org files.
 (add-to-list 'org-agenda-files (expand-file-name "~/orgs"))
-
 
 (provide 'glen-org-stuff)

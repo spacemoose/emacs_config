@@ -1,0 +1,36 @@
+* My favorite shortcuts
+
+- C-space :: set mark.
+- C-w :: "kill region" -- this is like a cut operation, but adds to kill-ring.
+- C-a :: beginning of line.
+- C-e :: end of line.
+- C-k :: kill-rest-of-line.  Kills everything from the cursor to the
+         end of line and adds it to the kill ring.
+- C-arrow :: move one 'word' left or right.  Alternatives are alt-b and alt-f.
+- C-y :: "Yank", yanks the most recent entry from the kill ring into point.
+- A-y :: "yank-backwards", go back one entry in the kill ring and yank
+         that into point.  You can repeat this to search the kill ring
+         for something.
+- C-r :: reverse search.  I find this a little clunky but still pretty useful.
+
+Not emacs related:
+
+- you can do "history | grep command" to find an old command.  This
+  command will have a history number.  You can repeat the command by
+  typing !number.
+
+
+* TODO dat mode in emacs
+  This is looking pretty good, but when I transpose rows and columns,
+  I'd like it to be a unitary transformation (do it twice and get back
+  to same state).  Currently I lose the empty fieds.
+
+  Ideally the transposed state would only be a view, not a real state.
+
+
+* TODO change find other file to use projectile.
+
+* TODO emacs optimization
+
+  Try [[https://atilanevesoncode.wordpress.com/2014/09/04/emacs-as-my-ide-homecoming/][this]]
+  experiment with cpputils-cmake, cmake-ide

@@ -4,6 +4,7 @@
 ;; I didn't put in enforcement for the most awful crap the formatter
 ;; did.  I think there the solution is to fix the Eclipse settings.
 
+(setq compile-command "ssh pdxenlin66 \"gmake -j16 ~/per_branch_clones/5.2.0/eamis/ | sed s/~//\"")
 (setq c-default-style "linux")
 (setq-default c-basic-offset 4
 			  tab-width 4
@@ -17,7 +18,6 @@
   )
 
 (add-hook 'c++-mode-hook 'my-indent-setup)
-
 
 ; All these should go in one c-mode common hook statement.
 (add-hook 'c-mode-common-hook 'subword-mode) ; camel case support

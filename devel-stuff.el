@@ -1,20 +1,21 @@
-;; ---
-;; building
-;; (add-hook 'c-mode-common-hook
-;; 	  (lambda ()
-;; 	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-;; 	      (ggtags-mode 1))))
-
-
 
 (add-hook 'c-mode-common-hook 'hs-minor-mode) ;hideshow enabled for all C/C++
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook 'nlinum-mode)
 
+(set-face-attribute 'font-lock-function-name-face nil
+;					:weight 'bold
+					:height 1.25 )
+
+(setq flycheck-clang-language-standard "c++11")
+
+;; More visually obvious error message.
+(define-fringe-bitmap 'custom-hollow-right-arrow [128 192 96 48 24 48 96 192 128] 15 8 'center)
+(put 'overlay-arrow-position 'overlay-arrow-bitmap 'custom-hollow-right-arrow)
 
 ;;-------------------------------------------------------
 ;;        HIDESHOW
-;(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
+(global-set-key [C-tab] 'hs-toggle-hiding) ; ctl-tab hides/shows a block
 
 
 ;; @todo need to get this working again, but using helmf
