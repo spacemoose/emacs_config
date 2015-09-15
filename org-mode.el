@@ -117,6 +117,6 @@
       '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
 ;;; Where I keep my org files.
-(add-to-list 'org-agenda-files (expand-file-name "~/orgs"))
+;(add-to-list 'org-agenda-files (expand-file-name "~/orgs"))
 
 (provide 'glen-org-stuff)
