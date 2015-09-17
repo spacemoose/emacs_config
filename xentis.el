@@ -35,3 +35,30 @@
 (add-to-list 'auto-mode-alist '("\\.boc\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.pc\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.ph\\'" . c++-mode))
+
+
+;;
+;; ORG MODE
+;;
+(add-to-list 'org-agenda-files (expand-file-name "~/Xen/orgs"))
+
+;; Took this from:
+;; http://stackoverflow.com/questions/17215868/recursively-adding-org-files-in-a-top-level-directory-for-org-agenda-files-take
+;; Collect all .org from my Org directory and subdirs
+(setq org-agenda-file-regexp "\\`[^.].*\\.org\\'") ; default value
+(defun load-org-agenda-files-recursively (dir) "Find all directories in DIR."
+    (unless (file-directory-p dir) (error "Not a directory `%s'" dir))
+    (unless (equal (directory-files dir nil org-agenda-file-regexp t) nil)
+      (add-to-list 'org-agenda-files dir)
+    )
+    (dolist (file (directory-files dir nil nil t))
+        (unless (member file '("." ".."))
+            (let ((file (concat dir file "/")))
+                (when (file-directory-p file)
+                    (load-org-agenda-files-recursively file)
+                )
+            )
+        )
+    )
+)
+(load-org-agenda-files-recursively "~/repos/personal/" ) ; trailing slash required
