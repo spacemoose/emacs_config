@@ -43,8 +43,10 @@
 ;; Code snippets and unicode:
 ;;---------------------------
 
-(delete "inputenc" org-latex-default-packages-alist)
-(delete "fontspec" org-latex-default-packages-alist)
+(setq org-latex-default-packages-alist (delete '("AUTO" "inputenc" t)
+											   org-latex-default-packages-alist))
+(setq org-latex-default-packages-alist (delete '("T1" "fontenc" t)
+											   org-latex-default-packages-alist))
 
 ;; minted for highlighting, fontspec for unicode fonts
 (setq org-latex-packages-alist (quote (("" "minted" t) ("" "fontspec" nil))))
